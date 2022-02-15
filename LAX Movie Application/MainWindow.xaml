@@ -1,0 +1,65 @@
+﻿<Window x:Class="LAX_Movie_Application.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAX_Movie_Application"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450" Width="800"
+        WindowStyle="None"
+        Background="Transparent" 
+        MouseDown="Window_MouseDown"
+        AllowsTransparency="True">
+
+
+    <Border Background="BlanchedAlmond"
+            CornerRadius="20">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="LAX film database"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="26"
+                       FontFamily="Times New Roman Bold"
+                       Margin="20,0,0,0"/>
+
+
+            <Ellipse x:Name="Close" Fill="Red" Grid.Row="0" Grid.Column="2" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" MouseLeftButtonDown="Close_MouseLeftButtonDown" ToolTip="Close Application"/>
+            <Ellipse Fill="Green" Grid.Row="0" Grid.Column="2" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,40,0" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown_1" ToolTip="Maximize / Restore" />
+            <Ellipse Fill="Yellow" Grid.Row="0" Grid.Column="2" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,70,0" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown" ToolTip="Minimize Application"/>
+            <TextBlock Text="LAX film database"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Background="Transparent"
+                       FontSize="26"
+                       FontFamily="Times New Roman Bold"
+                       Margin="20,0,0,0"/>
+
+
+            <Border Grid.Row="1">
+                <DataGrid x:Name="DataGridXAML" AutoGenerateColumns="False" FontSize="20" Margin="10,57,10,11">
+                    <!-- Column Header, Text & Binding-->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Titel" Width="260" Binding="{Binding Titel}"/>
+                        <DataGridTextColumn Header="Instruktør" Width="260" Binding="{Binding Instructor}"/>
+                        <DataGridTextColumn Header="Udgivelsesdato" Width ="260" Binding="{Binding DateOfRelease}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+
+            <!-- Oprettelses knap --> 
+            <Button Grid.Row="1" Height="30" Width="200" RenderTransformOrigin="0.507,-4.834" Margin="81,10,519,335" FontSize="20" Click="Button_Click_Opret">Opret</Button>
+            <!-- Detalje knap -->
+            <Button Grid.Row="1" Height="30" Width="200" Margin="520,10,80,335" Click="Button_Click_Detaljer" FontSize="20" Content="Detaljer"/>
+            <!-- Opdater tabel knap-->
+            <Button Grid.Row="1" Height="30" Width="200" Margin="300,10,300,335" Content="Opdater" FontSize="20" Click="Button_Click_Opdater"/>
+        </Grid>
+    </Border>
+</Window>
