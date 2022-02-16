@@ -14,13 +14,9 @@ using LAX_Movie_Application;
 
 namespace LAX_Movie_Application
 {
-    /// <summary>
-    /// Interaction logic for Dialog.xaml
-    /// </summary>
+
     public partial class Dialog : Window
     {
-        private string error;
-
         public Dialog()
         {
             InitializeComponent();
@@ -98,7 +94,7 @@ namespace LAX_Movie_Application
             }
         }
 
-        private void SletFilm(object sender, RoutedEventArgs e)
+        private void Fortryd(object sender, RoutedEventArgs e)
         {
             try
             {

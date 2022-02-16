@@ -27,26 +27,7 @@ namespace LAX_Movie_Application
             FillDataGrid();
         }
 
-        // Funktion der udfylder data i Datagrid.
-        private void FillDataGrid()
-        {
-            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
 
-            string CmdString = string.Empty;
-
-            using (SqlConnection con = new SqlConnection(ConString))
-
-            {
-
-                CmdString = "SELECT Titel, Instructor, DateOfRelease FROM Movies";
-                SqlCommand cmd = new SqlCommand(CmdString, con);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("Movies");
-                sda.Fill(dt);
-                DataGridXAML.ItemsSource = dt.DefaultView;
-
-            }
-        }
      
         // Tilføjer funktionen at applikationen kan bevæges rundt på skærmen.
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -67,7 +48,7 @@ namespace LAX_Movie_Application
             }
         }
 
-        // Tilføjer funktionen at applikationen man minimeres
+        // En try catch statement som tilføjer funktionen at applikationen kan minimeres
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -80,7 +61,7 @@ namespace LAX_Movie_Application
             }
         }
 
-        // Tilføjer funktionen at applikationen kan gøres mindre, og større hvis den i forvejen er mindre.
+        // En try catch statement som gør at applikation kan gøres mindre, og større hvis den i forvejen er mindre.
         private void Ellipse_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             try
@@ -105,12 +86,50 @@ namespace LAX_Movie_Application
 
         private void Button_Click_Detaljer(object sender, RoutedEventArgs e)
         {
-
+            Detaljer nytVindue = new Detaljer();
+            nytVindue.Show();
         }
 
+        // Funktion der udfylder data i Datagrid ved opstart.
+        private void FillDataGrid()
+        {
+            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+
+            string CmdString = string.Empty;
+
+            using (SqlConnection con = new SqlConnection(ConString))
+
+            {
+
+                CmdString = "SELECT Titel, Instructor, DateOfRelease FROM Movies";
+                SqlCommand cmd = new SqlCommand(CmdString, con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Movies");
+                sda.Fill(dt);
+                DataGridXAML.ItemsSource = dt.DefaultView;
+
+            }
+        }
+
+        // Funktion der udfylder data i Datagrid når der trykkes på opdater knappen.
         private void Button_Click_Opdater(object sender, RoutedEventArgs e)
         {
+            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
 
+            string CmdString = string.Empty;
+
+            using (SqlConnection con = new SqlConnection(ConString))
+
+            {
+
+                CmdString = "SELECT Titel, Instructor, DateOfRelease FROM Movies";
+                SqlCommand cmd = new SqlCommand(CmdString, con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Movies");
+                sda.Fill(dt);
+                DataGridXAML.ItemsSource = dt.DefaultView;
+
+            }
         }
     }
 }
