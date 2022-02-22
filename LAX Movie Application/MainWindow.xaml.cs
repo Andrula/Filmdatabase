@@ -16,9 +16,6 @@ using System.Configuration;
 
 namespace LAX_Movie_Application
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -86,8 +83,24 @@ namespace LAX_Movie_Application
 
         private void Button_Click_Detaljer(object sender, RoutedEventArgs e)
         {
-            Detaljer nytVindue = new Detaljer();
-            nytVindue.Show();
+            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            string CmdString = string.Empty;
+
+            using (SqlConnection con = new SqlConnection(ConString))
+            {
+                CmdString = "DELETE FROM Movies WHERE ID='" + IDbox.Text + "';";
+                SqlCommand cmd = new SqlCommand(CmdString, con);
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         // Funktion der udfylder data i Datagrid ved opstart.
@@ -101,7 +114,7 @@ namespace LAX_Movie_Application
 
             {
 
-                CmdString = "SELECT Titel, Instructor, DateOfRelease FROM Movies";
+                CmdString = "SELECT ID, Titel, Instructor, DateOfRelease FROM Movies";
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Movies");
@@ -122,7 +135,7 @@ namespace LAX_Movie_Application
 
             {
 
-                CmdString = "SELECT Titel, Instructor, DateOfRelease FROM Movies";
+                CmdString = "SELECT ID, Titel, Instructor, DateOfRelease FROM Movies";
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Movies");
@@ -131,5 +144,7 @@ namespace LAX_Movie_Application
 
             }
         }
+
+
     }
 }

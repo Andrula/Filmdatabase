@@ -75,7 +75,7 @@ namespace LAX_Movie_Application
 
             using (SqlConnection con = new SqlConnection(ConString))
             {
-                string Query = "Insert into Movies (Titel,Instructor,DateOfRelease) Values('"+ TitelTB.Text + "','" + InstructorTB.Text + "'," + YearTB.Text + ")";
+                string Query = "Insert into Movies (ID, Titel,Instructor,DateOfRelease) Values('"+ IDTB.Text +"','"+ TitelTB.Text + "','" + InstructorTB.Text + "'," + YearTB.Text + ")";
                 SqlCommand command = new SqlCommand(Query, con);
                 try
                 {

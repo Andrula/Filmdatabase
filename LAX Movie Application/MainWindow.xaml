@@ -44,22 +44,27 @@
 
 
             <Border Grid.Row="1">
-                <DataGrid x:Name="DataGridXAML" AutoGenerateColumns="False" FontSize="20" Margin="10,57,10,11">
+                <DataGrid x:Name="DataGridXAML"  AutoGenerateColumns="False" FontSize="20" Margin="10,57,10,11">
+
+
                     <!-- Column Header, Text & Binding-->
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Titel" Width="260" Binding="{Binding Titel}"/>
-                        <DataGridTextColumn Header="Instruktør" Width="260" Binding="{Binding Instructor}"/>
-                        <DataGridTextColumn Header="Udgivelsesdato" Width ="260" Binding="{Binding DateOfRelease}"/>
+                        <DataGridTextColumn Header="ID" Width="50" Binding="{Binding ID}"/>
+                        <DataGridTextColumn Header="Titel" Width="280" Binding="{Binding Titel}"/>
+                        <DataGridTextColumn Header="Instruktør" Width="280" Binding="{Binding Instructor}"/>
+                        <DataGridTextColumn Header="Udgivelsesdato" Width ="170" Binding="{Binding DateOfRelease}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Border>
 
-            <!-- Oprettelses knap --> 
-            <Button Grid.Row="1" Height="30" Width="200" RenderTransformOrigin="0.507,-4.834" Margin="81,10,519,335" FontSize="20" Click="Button_Click_Opret">Opret</Button>
+            <!-- Oprettelses knap -->
+            <Button Grid.Row="1" Height="30" Width="200" RenderTransformOrigin="0.507,-4.834" Margin="10,10,590,335" FontSize="20" Click="Button_Click_Opret">Opret</Button>
             <!-- Detalje knap -->
-            <Button Grid.Row="1" Height="30" Width="200" Margin="520,10,80,335" Click="Button_Click_Detaljer" FontSize="20" Content="Detaljer"/>
+            <Button Grid.Row="1" Height="30" Width="200" Margin="580,10,20,335" Click="Button_Click_Detaljer" FontSize="20" Content="Slet film"/>
             <!-- Opdater tabel knap-->
-            <Button Grid.Row="1" Height="30" Width="200" Margin="300,10,300,335" Content="Opdater" FontSize="20" Click="Button_Click_Opdater"/>
+            <Button Grid.Row="1" Height="30" Width="200" Margin="215,10,385,335" Content="Opdater" FontSize="20" Click="Button_Click_Opdater"/>
+
+            <TextBox x:Name="IDbox" HorizontalAlignment="Left" Margin="420,10,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="155" Height="30" FontSize="20"/>
         </Grid>
     </Border>
 </Window>

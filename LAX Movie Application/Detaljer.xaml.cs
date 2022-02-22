@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using LAX_Movie_Application;
 
 namespace LAX_Movie_Application
@@ -86,10 +85,26 @@ namespace LAX_Movie_Application
 
         private void Button_Click_Slet(object sender, RoutedEventArgs e)
         {
-
-
-
-
+            
+            
+            
+            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ConString))
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand("DELETE FROM Movies WHERE ID = '" + SletKnap + "';", con))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
+            }
+            catch (SystemException ex)
+            {
+                MessageBox.Show(string.Format("Der opstod en fejl: {0}", ex.Message));
+            }
         }
     }
 }

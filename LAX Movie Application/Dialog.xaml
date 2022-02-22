@@ -35,17 +35,19 @@
                        FontFamily="Times New Roman Bold"
                        Margin="20,0,0,0"/>
 
-            <TextBox x:Name="TitelTB" HorizontalAlignment="Left" Margin="20,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="33"/>
-            <TextBox x:Name="InstructorTB" HorizontalAlignment="Center" Margin="0,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="33"/>
-            <TextBox x:Name="YearTB" HorizontalAlignment="Left" Margin="370,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="33"/>
-
+            <TextBox x:Name="TitelTB" HorizontalAlignment="Left" Margin="95,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="33"/>
+            <TextBox x:Name="InstructorTB" HorizontalAlignment="Left" Margin="265,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="33"/>
+            <TextBox x:Name="YearTB" HorizontalAlignment="Left" Margin="435,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Height="33"/>
+            <TextBox x:Name="IDTB" HorizontalAlignment="Left" Margin="31,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="33" RenderTransformOrigin="-0.802,-3.469"/>
+            
             <Button Content="Opret" HorizontalAlignment="Left" Margin="470,113,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="1.731,3.478" Height="35" Width="60" Click="OpretNyFilm"/>
             <Button Content="Fortryd" HorizontalAlignment="Left" Margin="20,113,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="56" Click="Fortryd"/>
-            
 
-            <Label Content="Titel" HorizontalAlignment="Left" Margin="86,21,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <Label Content="Instruktør" HorizontalAlignment="Center" Margin="0,21,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <Label Content="Udgivelsesdato" HorizontalAlignment="Left" Margin="410,21,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.363,0.051"/>
+
+            <Label Content="Titel" HorizontalAlignment="Left" Margin="163,27,0,0" Grid.Row="1" VerticalAlignment="Top" Width="33"/>
+            <Label Content="Instruktør" HorizontalAlignment="Left" Margin="319,27,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Label Content="Udgivelsesdato" HorizontalAlignment="Left" Margin="439,27,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.363,0.051"/>
+            <Label Content="ID" HorizontalAlignment="Left" Margin="48,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="33"/>
 
 
 

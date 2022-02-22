@@ -39,6 +39,8 @@
             <Button Content="Tilbage" HorizontalAlignment="Left" Margin="20,113,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="56" Click="Button_Click" />
             <Button Content="Slet Film" HorizontalAlignment="Left" Margin="470,113,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="1.731,3.478" Height="35" Width="60" Click="Button_Click_Slet"/>
 
+            <TextBox x:Name="SletKnap" HorizontalAlignment="Left" Margin="384,113,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Height="35" RenderTransformOrigin="-1.824,-0.914"/>
+
         </Grid>
     </Border>
 </Window>
